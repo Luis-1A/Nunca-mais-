@@ -1,111 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Não Informado</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Não Informado</title>
 
-    <!-- favicon link  -->
-    <link rel="shortcut icon" href="./assets/logo.svg" type="image/svg">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/logo.svg" type="image/svg" />
 
-    <!-- link to google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet"/>
 
-    <!-- style sheet  -->
-    <link rel="stylesheet" href="style.css">
+  <!-- styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="planto">
+    <!-- seção home -->
+    <section>
+      <header>
+        <div class="logo">
+          <img src="./assets/logo.svg" alt="" />
+          <h4>Não Informado</h4>
+        </div>
+        <ul class="nav_menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">Sobre</a></li>
+        </ul>
+        <div class="nav_icon">
+          <button onclick="openMenu()">
+            <img src="./assets/menu.svg" class="menu" alt="" />
+          </button>
+        </div>
+      </header>
+    </section>
 
-    <div class="planto">
-        <!-- home section -->
-        <section>
-            <header>
-                <div class="logo">
-                    <img src="./assets/logo.svg" alt="">
-                    <h4>Não Informado</h4>
-                </div>
+    <!-- seção serviços -->
+    <section class="selling home">
+      <div class="info">
+        <h2 class="title">Serviços Profissionais</h2>
+        <p class="instructions">
+          Especialistas em jardinagem, irrigação, manutenção de jardins, elétrica e automatização. Cuidamos do seu espaço com tecnologia e responsabilidade.
+        </p>
+      </div>
 
-                <ul class="nav_menu">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">Sobre</a></li>
-                </ul>
+      <div class="search">
+        <button onclick="mostrarTodos()" class="btn">Visualizar todas</button>
+        <button onclick="abrirCarrossel()" class="btn">Ver outros serviços</button>
+      </div>
 
-                <div class="nav_icon">
-                    <button onclick="openMenu()">
-                        <img src="./assets/menu.svg" class="menu" alt="">
-                    </button>
-                </div>
-            </header>
-        </section>
+      <div class="title">
+        <img src="./assets/title-border1.svg" alt="" />
+        <h2>Nossos Serviços</h2>
+        <img src="./assets/title-border2.svg" alt="" />
+      </div>
 
-        <!-- serviços section -->
-        <section class="selling home">
-            <div class="info">
-                <h2 class="title">Serviços Profissionais</h2>
-                <p class="instructions">
-                    Especialistas em jardinagem, irrigação, manutenção de jardins, elétrica e automatização. Cuidamos do seu espaço com tecnologia e responsabilidade.
-                </p>
-            </div>
+      <div class="plants">
+        <!-- Conteúdo via JavaScript -->
+      </div>
+    </section>
+  </div>
 
-            <div class="search">
-                <button onclick="mostrarTodos()" class="btn">Visualizar todas</button>
-            </div>
-
-            <div class="title">
-                <img src="./assets/title-border1.svg" alt="">
-                <h2>Nossos Serviços</h2>
-                <img src="./assets/title-border2.svg" alt="">
-            </div>
-
-            <div class="plants">
-                <!-- Conteúdo carregado via JavaScript -->
-            </div>
-        </section>
+  <!-- Modal do carrossel -->
+  <div id="carrosselModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="fecharCarrossel()">&times;</span>
+      <div class="carrossel">
+        <img id="carrosselImagem" src="" alt="Serviço" />
+        <p id="carrosselDescricao">Descrição do serviço</p>
+      </div>
     </div>
+  </div>
 
-    <footer>
-        <section class="footer">
-            <div class="footer_top">
-                <div class="footer_title">
-                    <div class="footer_logo">
-                        <img src="/assets/logo.svg" alt="">
-                        <h3>Não Informado</h3>
-                    </div>
-                </div>
+  <!-- rodapé -->
+  <footer>
+    <section class="footer">
+      <div class="footer_top">
+        <div class="footer_title">
+          <div class="footer_logo">
+            <img src="/assets/logo.svg" alt="" />
+            <h3>Não Informado</h3>
+          </div>
+        </div>
+        <ul>
+          <li><h2>Quick Link's</h2></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">Sobre</a></li>
+        </ul>
+      </div>
+      <div class="footer_bot">
+        <div class="social">
+          <!-- redes sociais -->
+        </div>
+        <p>
+          Não Informado 2025 - Todos os direitos Reservados. developer eu mesmo kkkk
+        </p>
+      </div>
+    </section>
+  </footer>
 
-                <ul>
-                    <li>
-                        <h2>Quick Link's</h2>
-                    </li>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">Sobre</a></li>
-                </ul>
-            </div>
-
-            <div class="footer_bot">
-                <div class="social">
-                    <!-- redes sociais -->
-                </div>
-                <p>
-                    Não Informado 2025 - Todos os direitos Reservados. developer eu mesmo kkkk
-                </p>
-            </div>
-        </section>
-    </footer>
-
-    <!-- Incluindo os arquivos de dados e scripts -->
-    <script src="./data.js"></script>
-    <script src="./app.js"></script>
-    <script>
-        // Ao carregar a página, executa a função mostrarTodos()
-        window.onload = function () {
-            mostrarTodos();
-        };
-    </script>
+  <!-- scripts -->
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+  <script src="./carrossel.js"></script>
 </body>
-
 </html>
