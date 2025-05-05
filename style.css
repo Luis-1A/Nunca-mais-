@@ -1,13 +1,13 @@
 /* variables  */
 :root{
-    --text-color: rgba(255, 255, 255, 0.75);
+    --text-color: rgba(255, 255, 255, 0.85);
     --body-color: rgb(255, 255, 255);
-    --trans-color: rgba(255, 255, 255, 0.05);
+    --trans-color: rgba(255, 255, 255, 0.1);
 
-    --primary-color:#55823d;
-    --secondary-color:#9ec36e;
-    --background-color: #e0ead6;
-    --green-alternative: #68a86c;
+    --primary-color: #2a6f29; /* Vibrant forest green */
+    --secondary-color: #a8d65e; /* Bright lime green */
+    --background-color: #d9e8c5; /* Soft pastel green */
+    --green-alternative: #4a9e4d; /* Lively emerald green */
 }
 
 /* Estilizando a barra de rolagem vertical */
@@ -101,7 +101,7 @@ button{
 
 button:hover{
     cursor: pointer;
-    background-color: #55823d;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
@@ -118,7 +118,7 @@ button:hover{
     margin: 0 auto;
     height: auto;
     position: relative;
-    background-color: #1b2316;
+    background-color: #1a2f15; /* Darker green for depth */
 }
 
 /* home  */
@@ -197,8 +197,8 @@ header{
 }
 
 .nav_menu li a:hover {
-    color: #55823d;
-    border-bottom: 1px solid #55823d;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .nav_icon{
@@ -256,7 +256,7 @@ header{
     color: #000; /* Uma cor mais clara para indicar que é uma instrução */
   }
 
-.span_cont {
+.espaço_cont {
     width: auto;
     height: 2rem;
     border: 2px solid var(--secondary-color);
@@ -380,7 +380,7 @@ header{
 /* footer  */
 footer{
     width: 100%;
-    background-color: #222c1d;
+    background-color: #1f3b1c; /* Rich dark green */
 }
 
 .footer{
@@ -448,7 +448,7 @@ footer ul li:not(:first-child){
 
 .form_group button:hover{
     cursor: pointer;
-    background-color: #55823d;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
