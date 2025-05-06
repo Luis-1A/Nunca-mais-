@@ -1,50 +1,90 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jardim do Éden - Paisagismo</title>  <!-- favicon -->  <link rel="shortcut icon" href="./assets/logo.svg" type="image/svg" />  <!-- google fonts -->  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <title>Jardim do Éden - Paisagismo</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/logo.svg" type="image/svg" />
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet"/>  <!-- styles -->  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="style.css" />
   <style>
+    /* Animações de entrada */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1s ease forwards;
-    }@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    }
 
-.dev-name {
-  cursor: pointer;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.dev-name:hover {
-  color: #4CAF50;
-}
+    /* Animações adicionais para chamar atenção */
+    .bounce-in {
+      animation: bounceIn 1s ease-in-out;
+    }
 
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #25D366;
-  color: white;
-  border: none;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-}
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-.btn-whatsapp img {
-  width: 20px;
-  height: 20px;
-}
+    /* Estilo do botão WhatsApp com fundo branco */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: white;
+      color: #25D366;
+      border: 2px solid #25D366;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
 
+    .btn-whatsapp:hover {
+      transform: scale(1.05);
+      background-color: #25D366;
+      color: white;
+    }
+
+    .btn-whatsapp img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .dev-name {
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .dev-name:hover {
+      color: #4CAF50;
+    }
   </style>
 </head>
 <body>
@@ -52,7 +92,7 @@
     <!-- seção home -->
     <section>
       <header>
-        <div class="logo">
+        <div class="logo bounce-in">
           <img src="./assets/logo.svg" alt="Logo Jardim do Éden" />
           <h4>Jardim do Éden - Paisagismo</h4>
         </div>
@@ -61,7 +101,7 @@
           <li><a href="./about.html">Sobre</a></li>
           <li>
             <a href="https://wa.me/5561992286508?text=Ol%C3%A1!%20Vi%20algumas%20informa%C3%A7%C3%B5es%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos."
-              target="_blank" class="btn-whatsapp">
+               target="_blank" class="btn-whatsapp">
               <img src="./assets/whatsapp.svg" alt="WhatsApp" />
               WhatsApp
             </a>
@@ -73,37 +113,41 @@
           </button>
         </div>
       </header>
-    </section><!-- seção serviços -->
-<section class="selling home fade-in">
-  <div class="info">
-    <h2 class="title">Serviços Profissionais</h2>
-    <p class="instructions">
-      Especialistas em jardinagem, irrigação, manutenção de jardins, elétrica e automatização. Cuidamos do seu espaço com tecnologia e responsabilidade.
-    </p>
+    </section>
+
+    <!-- seção serviços -->
+    <section class="selling home fade-in">
+      <div class="info">
+        <h2 class="title">Serviços Profissionais</h2>
+        <p class="instructions">
+          Especialistas em jardinagem, irrigação, manutenção de jardins, elétrica e automatização. Cuidamos do seu espaço com tecnologia e responsabilidade.
+        </p>
+      </div>
+
+      <div class="search">
+        <button onclick="mostrarTodos()" class="btn">Visualizar todas</button>
+        <button onclick="abrirCarrossel()" class="btn">Ver outros serviços</button>
+        <a href="https://wa.me/5561992286508?text=Ol%C3%A1!%20Vi%20algumas%20informa%C3%A7%C3%B5es%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos."
+           target="_blank" class="btn-whatsapp">
+          <img src="./assets/whatsapp.svg" alt="WhatsApp" />
+          WhatsApp
+        </a>
+      </div>
+
+      <div class="title">
+        <img src="./assets/title-border1.svg" alt="" />
+        <h2>Nossos Serviços</h2>
+        <img src="./assets/title-border2.svg" alt="" />
+      </div>
+
+      <div class="plants fade-in">
+        <!-- Conteúdo via JavaScript -->
+      </div>
+    </section>
   </div>
 
-  <div class="search">
-    <button onclick="mostrarTodos()" class="btn">Visualizar todas</button>
-    <button onclick="abrirCarrossel()" class="btn">Ver outros serviços</button>
-    <a href="https://wa.me/5561992286508?text=Ol%C3%A1!%20Vi%20algumas%20informa%C3%A7%C3%B5es%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos."
-       target="_blank" class="btn-whatsapp">
-      <img src="./assets/whatsapp.svg" alt="WhatsApp" />
-      WhatsApp
-    </a>
-  </div>
-
-  <div class="title">
-    <img src="./assets/title-border1.svg" alt="" />
-    <h2>Nossos Serviços</h2>
-    <img src="./assets/title-border2.svg" alt="" />
-  </div>
-
-  <div class="plants fade-in">
-    <!-- Conteúdo via JavaScript -->
-  </div>
-</section>
-
-  </div>  <!-- Modal do carrossel -->  <div id="carrosselModal" class="modal hidden">
+  <!-- Modal do carrossel -->
+  <div id="carrosselModal" class="modal hidden">
     <div class="modal-content">
       <span class="close" onclick="fecharCarrossel()">&times;</span>
       <div class="carrossel">
@@ -111,7 +155,10 @@
         <p id="carrosselDescricao">Descrição do serviço</p>
       </div>
     </div>
-  </div>  <!-- rodapé -->  <footer>
+  </div>
+
+  <!-- rodapé -->
+  <footer>
     <section class="footer fade-in">
       <div class="footer_top">
         <div class="footer_title">
@@ -138,11 +185,20 @@
           <!-- redes sociais -->
         </div>
         <p>
-          Jardim do Éden - Paisagismo 2025 - Todos os direitos Reservados.
+          Jardim do Éden - Paisagismo 2025 - Todos os direitos Reservados.<br> Desenvolvido com criatividade por 
+          <span class="dev-name" title="Clique e segure para visitar o Instagram">Luis Fernando Santos</span>.
         </p>
       </div>
     </section>
-  </footer>  <!-- scripts -->  <script src="./data.js"></script>  <script src="./app.js"></script>  <script src="./carrossel.js"></script>  <!-- JS para nome interativo -->  <script>
+  </footer>
+
+  <!-- scripts -->
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+  <script src="./carrossel.js"></script>
+
+  <!-- JS para nome interativo -->
+  <script>
     window.addEventListener('DOMContentLoaded', () => {
       const footerText = document.querySelector('.footer_bot p');
 
@@ -176,5 +232,6 @@
         footerText.appendChild(after);
       }
     });
-  </script></body>
+  </script>
+</body>
 </html>
