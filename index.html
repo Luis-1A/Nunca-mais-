@@ -38,6 +38,24 @@
     .dev-name:hover {
       color: #4CAF50;
     }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+
+    .btn-whatsapp img {
+      width: 20px;
+      height: 20px;
+    }
   </style>
 </head>
 <body>
@@ -52,7 +70,13 @@
         <ul class="nav_menu">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html">Sobre</a></li>
-          <li><a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre" target="_blank">WhatsApp</a></li>
+          <li>
+            <a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre"
+              target="_blank" class="btn-whatsapp">
+              <img src="./assets/whatsapp.svg" alt="WhatsApp" />
+              WhatsApp
+            </a>
+          </li>
         </ul>
         <div class="nav_icon">
           <button onclick="openMenu()">
@@ -74,7 +98,11 @@
       <div class="search">
         <button onclick="mostrarTodos()" class="btn">Visualizar todas</button>
         <button onclick="abrirCarrossel()" class="btn">Ver outros serviços</button>
-        <a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre" target="_blank" class="btn">Fale Conosco</a>
+        <a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre"
+           target="_blank" class="btn-whatsapp">
+          <img src="./assets/whatsapp.svg" alt="WhatsApp" />
+          WhatsApp
+        </a>
       </div>
 
       <div class="title">
@@ -114,7 +142,13 @@
           <li><h2>Quick Link's</h2></li>
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html">Sobre</a></li>
-          <li><a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre" target="_blank">WhatsApp</a></li>
+          <li>
+            <a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre"
+              target="_blank" class="btn-whatsapp">
+              <img src="./assets/whatsapp.svg" alt="WhatsApp" />
+              WhatsApp
+            </a>
+          </li>
         </ul>
       </div>
       <div class="footer_bot">
@@ -142,8 +176,6 @@
         const devSpan = document.createElement('span');
         devSpan.textContent = 'Luis Fernando Santos';
         devSpan.className = 'dev-name';
-        devSpan.style.cursor = 'pointer';
-        devSpan.style.fontWeight = 'bold';
         devSpan.title = 'Clique e segure!';
 
         let segurando;
