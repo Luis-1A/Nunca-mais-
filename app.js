@@ -126,14 +126,22 @@ let indexAtual = 0;
 let intervalo;
 
 function abrirCarrossel() {
-  document.getElementById("carrosselModal").classList.remove("hidden");
+  const modal = document.getElementById("carrosselModal");
+  modal.classList.remove("hidden");
   mostrarServico();
   intervalo = setInterval(proximoServico, 5000);
+  criarBotaoFechar();
 }
 
 function fecharCarrossel() {
-  document.getElementById("carrosselModal").classList.add("hidden");
+  const modal = document.getElementById("carrosselModal");
+  modal.classList.add("hidden");
   clearInterval(intervalo);
+
+  const btnFechar = document.getElementById("botaoFechar");
+  if (btnFechar) {
+    btnFechar.remove();
+  }
 }
 
 function mostrarServico() {
@@ -147,3 +155,59 @@ function proximoServico() {
   indexAtual = (indexAtual + 1) % servicos.length;
   mostrarServico();
 }
+
+function criarBotaoFechar() {
+  if (document.getElementById("botaoFechar")) return; // Evita duplicar
+
+  const btn = document.createElement("button");
+  btn.id = "botaoFechar";
+  btn.innerText = "Fechar";
+  btn.style.position = "fixed";
+  btn.style.bottom = "20px";
+  btn.style.right = "20px";
+  btn.style.padding = "12px 20px";
+  btn.style.fontSize = "16px";
+  btn.style.backgroundColor = "#e74c3c";
+  btn.style.color = "white";
+  btn.style.border = "none";
+  btn.style.borderRadius = "8px";
+  btn.style.cursor = "pointer";
+  btn.style.zIndex = "1000";
+  btn.style.boxShadow = "0 0 10px rgba(0,0,0,0.2)";
+  btn.style.animation = "piscar 1s infinite alternate";
+
+  btn.onclick = fecharCarrossel;
+  document.body.appendChild(btn);
+
+  // Adiciona keyframe de piscar via JS
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @keyframes piscar {
+      from { opacity: 1; }
+      to { opacity: 0.5; }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+// Executa "mostrarTodos()" ao carregar o site
+window.addEventListener("load", () => {
+  if (typeof mostrarTodos === "function") {
+    mostrarTodos();
+  }
+
+  // Fechar com tecla ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      fecharCarrossel();
+    }
+  });
+
+  // Fechar ao clicar fora da modal
+  const modal = document.getElementById("carrosselModal");
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      fecharCarrossel();
+    }
+  });
+});
