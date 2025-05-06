@@ -1,4 +1,4 @@
-
+<script>
   const plants = [
     {
       title: 'Jardinagem Residencial',
@@ -44,29 +44,36 @@
     }
   ];
 
-  const container = document.querySelector('.plants');
-
-  function renderServices() {
+  function renderButtons() {
+    const container = document.querySelector('.plants');
     container.innerHTML = '';
+
     plants.forEach(service => {
-      const card = document.createElement('div');
-      card.className = 'plant fade-in';
-      card.style.cursor = 'pointer';
+      const button = document.createElement('button');
+      button.className = 'btn fade-in'; // usa mesma classe do botão "Visualizar todas"
+      button.style.display = 'flex';
+      button.style.flexDirection = 'column';
+      button.style.alignItems = 'center';
+      button.style.justifyContent = 'center';
+      button.style.padding = '20px';
+      button.style.margin = '10px';
+      button.style.cursor = 'pointer';
+      button.style.border = 'none';
 
-      const message = encodeURIComponent(`Olá! Vi o serviço "${service.title}" no site e tenho interesse em saber mais sobre ele.`);
-      const link = `https://wa.me/5561992286508?text=${message}`;
+      const msg = encodeURIComponent(`Olá! Vi o serviço "${service.title}" no site e tenho interesse em saber mais sobre ele.`);
+      const link = `https://wa.me/5561992286508?text=${msg}`;
 
-      card.innerHTML = `
-        <a href="${link}" target="_blank" style="text-decoration: none; color: inherit;">
-          <img src="${service.image}" alt="${service.title}" />
-          <h3>${service.title}</h3>
-          <p>${service.description}</p>
-        </a>
+      button.onclick = () => window.open(link, '_blank');
+
+      button.innerHTML = `
+        <img src="${service.image}" alt="${service.title}" style="width: 100px; height: auto; margin-bottom: 10px;" />
+        <strong style="margin-bottom: 8px;">${service.title}</strong>
+        <p style="font-size: 14px;">${service.description}</p>
       `;
 
-      container.appendChild(card);
+      container.appendChild(button);
     });
   }
 
-  // Chama a função ao carregar
-  document.addEventListener('DOMContentLoaded', renderServices);
+  document.addEventListener('DOMContentLoaded', renderButtons);
+</script>
