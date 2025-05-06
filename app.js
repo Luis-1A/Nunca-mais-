@@ -108,28 +108,28 @@ function openMenu() {
   }
 }
 const servicos = [
-  { imagem: "./assets/img1.jpg", descricao: "" },
-  { imagem: "./assets/img2.jpg", descricao: "" },
-  { imagem: "./assets/img3.jpg", descricao: "" },
-  { imagem: "./assets/img4.jpg", descricao: "" },
-  { imagem: "./assets/img5.jpg", descricao: "" },
-  { imagem: "./assets/img6.jpg", descricao: "" },
-  { imagem: "./assets/img7.jpg", descricao: "" },
-  { imagem: "./assets/img8.jpg", descricao: "" },
-  { imagem: "./assets/img9.jpg", descricao: "" },
-  { imagem: "./assets/img10.jpg", descricao: "" },
-  { imagem: "./assets/img11.jpg", descricao: "" },
-  { imagem: "./assets/img12.jpg", descricao: "" },
-  { imagem: "./assets/img13.jpg", descricao: "" },
-  { imagem: "./assets/img14.jpg", descricao: "" },
-  { imagem: "./assets/img15.jpg", descricao: "" },
-  { imagem: "./assets/img16.jpg", descricao: "" },
-  { imagem: "./assets/img17.jpg", descricao: "" },
-  { imagem: "./assets/img18.jpg", descricao: "" },
-  { imagem: "./assets/img19.jpg", descricao: "" },
-  { imagem: "./assets/img20.jpg", descricao: "" },
-  { imagem: "./assets/img21.jpg", descricao: "" },
-  { imagem: "./assets/img22.jpg", descricao: "" }
+  { imagem: "./assets/1.jpg", descricao: "" },
+  { imagem: "./assets/2.jpg", descricao: "" },
+  { imagem: "./assets/3.jpg", descricao: "" },
+  { imagem: "./assets/4.jpg", descricao: "" },
+  { imagem: "./assets/5.jpg", descricao: "" },
+  { imagem: "./assets/6.jpg", descricao: "" },
+  { imagem: "./assets/7.jpg", descricao: "" },
+  { imagem: "./assets/8.jpg", descricao: "" },
+  { imagem: "./assets/9.jpg", descricao: "" },
+  { imagem: "./assets/10.jpg", descricao: "" },
+  { imagem: "./assets/11.jpg", descricao: "" },
+  { imagem: "./assets/12.jpg", descricao: "" },
+  { imagem: "./assets/13.jpg", descricao: "" },
+  { imagem: "./assets/14.jpg", descricao: "" },
+  { imagem: "./assets/15.jpg", descricao: "" },
+  { imagem: "./assets/16.jpg", descricao: "" },
+  { imagem: "./assets/17.jpg", descricao: "" },
+  { imagem: "./assets/18.jpg", descricao: "" },
+  { imagem: "./assets/19.jpg", descricao: "" },
+  { imagem: "./assets/20.jpg", descricao: "" },
+  { imagem: "./assets/21.jpg", descricao: "" },
+  { imagem: "./assets/8.jpg", descricao: "" }
 ];t
 
 let indexAtual = 0;
@@ -220,4 +220,32 @@ window.addEventListener("load", () => {
       fecharCarrossel();
     }
   });
+});
+window.addEventListener("load", () => {
+  // Executa mostrarTodos automaticamente
+  if (typeof mostrarTodos === "function") {
+    mostrarTodos();
+  }
+
+  // Esconde o botão "Visualizar todas", mas garante que existe
+  const btn = document.querySelector('.btn');
+  if (btn) {
+    btn.style.display = "none";
+  }
+
+  // Eventos extras (como ESC e clique fora da modal, se aplicável)
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      fecharCarrossel();
+    }
+  });
+
+  const modal = document.getElementById("carrosselModal");
+  if (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        fecharCarrossel();
+      }
+    });
+  }
 });
