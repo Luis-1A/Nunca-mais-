@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jardim do Éden- Paisagismo</title>
+  <title>Jardim do Éden - Paisagismo</title>
 
   <!-- favicon -->
   <link rel="shortcut icon" href="./assets/logo.svg" type="image/svg" />
@@ -15,30 +15,55 @@
 
   <!-- styles -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .dev-name {
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .dev-name:hover {
+      color: #4CAF50;
+    }
+  </style>
 </head>
 <body>
-  <div class="planto">
+  <div class="planto fade-in">
     <!-- seção home -->
     <section>
       <header>
         <div class="logo">
-          <img src="./assets/logo.svg" alt="" />
-          <h4>Jardim do Éden- Paisagismo</h4>
+          <img src="./assets/logo.svg" alt="Logo Jardim do Éden" />
+          <h4>Jardim do Éden - Paisagismo</h4>
         </div>
         <ul class="nav_menu">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html">Sobre</a></li>
+          <li><a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre" target="_blank">WhatsApp</a></li>
         </ul>
         <div class="nav_icon">
           <button onclick="openMenu()">
-            <img src="./assets/menu.svg" class="menu" alt="" />
+            <img src="./assets/menu.svg" class="menu" alt="Abrir menu" />
           </button>
         </div>
       </header>
     </section>
 
     <!-- seção serviços -->
-    <section class="selling home">
+    <section class="selling home fade-in">
       <div class="info">
         <h2 class="title">Serviços Profissionais</h2>
         <p class="instructions">
@@ -49,6 +74,7 @@
       <div class="search">
         <button onclick="mostrarTodos()" class="btn">Visualizar todas</button>
         <button onclick="abrirCarrossel()" class="btn">Ver outros serviços</button>
+        <a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre" target="_blank" class="btn">Fale Conosco</a>
       </div>
 
       <div class="title">
@@ -57,7 +83,7 @@
         <img src="./assets/title-border2.svg" alt="" />
       </div>
 
-      <div class="plants">
+      <div class="plants fade-in">
         <!-- Conteúdo via JavaScript -->
       </div>
     </section>
@@ -76,18 +102,19 @@
 
   <!-- rodapé -->
   <footer>
-    <section class="footer">
+    <section class="footer fade-in">
       <div class="footer_top">
         <div class="footer_title">
           <div class="footer_logo">
-            <img src="/assets/logo.svg" alt="" />
-            <h3>Não Informado</h3>
+            <img src="/assets/logo.svg" alt="Logo" />
+            <h3>Jardim do Éden - Paisagismo</h3>
           </div>
         </div>
         <ul>
           <li><h2>Quick Link's</h2></li>
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html">Sobre</a></li>
+          <li><a href="https://wa.me/5561992286508?text=Vi%20algumas%20coisas%20no%20site%20e%20estou%20interessada%20em%20ver%20mais%20coisas%20sobre" target="_blank">WhatsApp</a></li>
         </ul>
       </div>
       <div class="footer_bot">
@@ -95,7 +122,7 @@
           <!-- redes sociais -->
         </div>
         <p>
-         Jardim do Éden- Paisagismo 2025 - Todos os direitos Reservados. developer eu mesmo kkkk
+          Jardim do Éden - Paisagismo 2025 - Todos os direitos Reservados.
         </p>
       </div>
     </section>
@@ -105,5 +132,44 @@
   <script src="./data.js"></script>
   <script src="./app.js"></script>
   <script src="./carrossel.js"></script>
+
+  <!-- JS para nome interativo -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const footerText = document.querySelector('.footer_bot p');
+
+      if (footerText) {
+        const devSpan = document.createElement('span');
+        devSpan.textContent = 'Luis Fernando Santos';
+        devSpan.className = 'dev-name';
+        devSpan.style.cursor = 'pointer';
+        devSpan.style.fontWeight = 'bold';
+        devSpan.title = 'Clique e segure!';
+
+        let segurando;
+        const abrirInsta = () => {
+          window.open('https://www.instagram.com/luis__fernando__santos?igsh=bjZjOXd4eHQxenVv', '_blank');
+        };
+
+        devSpan.addEventListener('mousedown', () => {
+          segurando = setTimeout(abrirInsta, 800);
+        });
+        devSpan.addEventListener('mouseup', () => clearTimeout(segurando));
+        devSpan.addEventListener('mouseleave', () => clearTimeout(segurando));
+        devSpan.addEventListener('touchstart', () => {
+          segurando = setTimeout(abrirInsta, 800);
+        });
+        devSpan.addEventListener('touchend', () => clearTimeout(segurando));
+
+        const before = document.createTextNode('Jardim do Éden - Paisagismo 2025 - Todos os direitos Reservados. Desenvolvido com criatividade por ');
+        const after = document.createTextNode('.');
+
+        footerText.textContent = '';
+        footerText.appendChild(before);
+        footerText.appendChild(devSpan);
+        footerText.appendChild(after);
+      }
+    });
+  </script>
 </body>
 </html>
