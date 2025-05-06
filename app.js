@@ -107,3 +107,43 @@ function openMenu() {
     menuIcon.classList.remove('active')
   }
 }
+const servicos = [
+  {
+    imagem: "./assets/img1.jpg",
+    descricao: "Paisagismo completo em residência no bairro Jardim Verde"
+  },
+  {
+    imagem: "./assets/img2.jpg",
+    descricao: "Instalação de sistema de irrigação com sensores de umidade"
+  },
+  {
+    imagem: "./assets/img3.jpg",
+    descricao: "Projeto de iluminação de jardim com LED automatizado"
+  }
+];
+
+let indexAtual = 0;
+let intervalo;
+
+function abrirCarrossel() {
+  document.getElementById("carrosselModal").classList.remove("hidden");
+  mostrarServico();
+  intervalo = setInterval(proximoServico, 5000);
+}
+
+function fecharCarrossel() {
+  document.getElementById("carrosselModal").classList.add("hidden");
+  clearInterval(intervalo);
+}
+
+function mostrarServico() {
+  const img = document.getElementById("carrosselImagem");
+  const desc = document.getElementById("carrosselDescricao");
+  img.src = servicos[indexAtual].imagem;
+  desc.textContent = servicos[indexAtual].descricao;
+}
+
+function proximoServico() {
+  indexAtual = (indexAtual + 1) % servicos.length;
+  mostrarServico();
+}
