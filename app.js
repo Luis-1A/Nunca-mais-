@@ -109,15 +109,15 @@ function openMenu() {
 }
 const servicos = [
   {
-    imagem: "./assets/img1.jpg",
+    imagem: "./assets/img1.png",
     descricao: "Paisagismo completo em residência no bairro Jardim Verde"
   },
   {
-    imagem: "./assets/img2.jpg",
+    imagem: "./assets/img1.png",
     descricao: "Instalação de sistema de irrigação com sensores de umidade"
   },
   {
-    imagem: "./assets/img3.jpg",
+    imagem: "./assets/img.png",
     descricao: "Projeto de iluminação de jardim com LED automatizado"
   }
 ];
