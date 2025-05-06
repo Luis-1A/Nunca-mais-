@@ -1,4 +1,4 @@
-<script>
+
   const plants = [
     {
       title: 'Jardinagem Residencial',
@@ -76,4 +76,4 @@
   }
 
   document.addEventListener('DOMContentLoaded', renderButtons);
-</script>
+
