@@ -130,7 +130,7 @@ const servicos = [
   { imagem: "./assets/20.jpg", descricao: "" },
   { imagem: "./assets/21.jpg", descricao: "" },
   { imagem: "./assets/8.jpg", descricao: "" }
-];t
+];
 
 let indexAtual = 0;
 let intervalo;
