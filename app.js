@@ -108,19 +108,29 @@ function openMenu() {
   }
 }
 const servicos = [
-  {
-    imagem: "./assets/img1.png",
-    descricao: "Paisagismo completo em residência no bairro Jardim Verde"
-  },
-  {
-    imagem: "./assets/img1.png",
-    descricao: "Instalação de sistema de irrigação com sensores de umidade"
-  },
-  {
-    imagem: "./assets/img.png",
-    descricao: "Projeto de iluminação de jardim com LED automatizado"
-  }
-];
+  { imagem: "./assets/img1.jpg", descricao: "" },
+  { imagem: "./assets/img2.jpg", descricao: "" },
+  { imagem: "./assets/img3.jpg", descricao: "" },
+  { imagem: "./assets/img4.jpg", descricao: "" },
+  { imagem: "./assets/img5.jpg", descricao: "" },
+  { imagem: "./assets/img6.jpg", descricao: "" },
+  { imagem: "./assets/img7.jpg", descricao: "" },
+  { imagem: "./assets/img8.jpg", descricao: "" },
+  { imagem: "./assets/img9.jpg", descricao: "" },
+  { imagem: "./assets/img10.jpg", descricao: "" },
+  { imagem: "./assets/img11.jpg", descricao: "" },
+  { imagem: "./assets/img12.jpg", descricao: "" },
+  { imagem: "./assets/img13.jpg", descricao: "" },
+  { imagem: "./assets/img14.jpg", descricao: "" },
+  { imagem: "./assets/img15.jpg", descricao: "" },
+  { imagem: "./assets/img16.jpg", descricao: "" },
+  { imagem: "./assets/img17.jpg", descricao: "" },
+  { imagem: "./assets/img18.jpg", descricao: "" },
+  { imagem: "./assets/img19.jpg", descricao: "" },
+  { imagem: "./assets/img20.jpg", descricao: "" },
+  { imagem: "./assets/img21.jpg", descricao: "" },
+  { imagem: "./assets/img22.jpg", descricao: "" }
+];t
 
 let indexAtual = 0;
 let intervalo;
