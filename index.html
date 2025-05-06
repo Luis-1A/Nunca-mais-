@@ -75,16 +75,6 @@
       width: 20px;
       height: 20px;
     }
-
-    .dev-name {
-      cursor: pointer;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    .dev-name:hover {
-      color: #4CAF50;
-    }
   </style>
 </head>
 <body>
@@ -102,7 +92,7 @@
           <li>
             <a href="https://wa.me/5561992286508?text=Ol%C3%A1!%20Vi%20algumas%20informa%C3%A7%C3%B5es%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos."
                target="_blank" class="btn-whatsapp">
-              <img src="./assets/whatsapp.svg" alt="WhatsApp" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
               WhatsApp
             </a>
           </li>
@@ -129,7 +119,7 @@
         <button onclick="abrirCarrossel()" class="btn">Ver outros serviços</button>
         <a href="https://wa.me/5561992286508?text=Ol%C3%A1!%20Vi%20algumas%20informa%C3%A7%C3%B5es%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos."
            target="_blank" class="btn-whatsapp">
-          <img src="./assets/whatsapp.svg" alt="WhatsApp" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
           WhatsApp
         </a>
       </div>
@@ -174,7 +164,7 @@
           <li>
             <a href="https://wa.me/5561992286508?text=Ol%C3%A1!%20Vi%20algumas%20informa%C3%A7%C3%B5es%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos."
               target="_blank" class="btn-whatsapp">
-              <img src="./assets/whatsapp.svg" alt="WhatsApp" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
               WhatsApp
             </a>
           </li>
@@ -186,8 +176,6 @@
         </div>
         <p>
           Jardim do Éden - Paisagismo 2025 - Todos os direitos Reservados.
-          </p><br><p>Desenvolvido com criatividade por 
-          <span class="dev-name" title="Clique e segure para visitar o Instagram">Luis Fernando Santos</span>.
         </p>
       </div>
     </section>
@@ -197,42 +185,5 @@
   <script src="./data.js"></script>
   <script src="./app.js"></script>
   <script src="./carrossel.js"></script>
-
-  <!-- JS para nome interativo -->
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const footerText = document.querySelector('.footer_bot p');
-
-      if (footerText) {
-        const devSpan = document.createElement('span');
-        devSpan.textContent = 'Luis Fernando Santos';
-        devSpan.className = 'dev-name';
-        devSpan.title = 'Clique e segure!';
-
-        let segurando;
-        const abrirInsta = () => {
-          window.open('https://www.instagram.com/luis__fernando__santos?igsh=bjZjOXd4eHQxenVv', '_blank');
-        };
-
-        devSpan.addEventListener('mousedown', () => {
-          segurando = setTimeout(abrirInsta, 800);
-        });
-        devSpan.addEventListener('mouseup', () => clearTimeout(segurando));
-        devSpan.addEventListener('mouseleave', () => clearTimeout(segurando));
-        devSpan.addEventListener('touchstart', () => {
-          segurando = setTimeout(abrirInsta, 800);
-        });
-        devSpan.addEventListener('touchend', () => clearTimeout(segurando));
-
-        const before = document.createTextNode('Jardim do Éden - Paisagismo 2025 - Todos os direitos Reservados. Desenvolvido com criatividade por ');
-        const after = document.createTextNode('.');
-
-        footerText.textContent = '';
-        footerText.appendChild(before);
-        footerText.appendChild(devSpan);
-        footerText.appendChild(after);
-      }
-    });
-  </script>
 </body>
 </html>
