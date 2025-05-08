@@ -32,29 +32,39 @@ function pesquisar() {
       const plantItem = document.createElement('div')
       plantItem.classList.add('plant_item')
 
-      plantItem.innerHTML = `
-      <div class="plant_items">
-        <div class="card-blur">
-          <div class="items_content">
-              <div class="items_content_img">
-                  <img src=${plant.image} alt=${plant.title}>
-              </div>
-              <div class="items_content_text">
-                  <h3>${plant.title}</h3>
-                  <p>${plant.description}</p>
-              </div>
-              <div class="items_content_inner">
-                  <span class="span_cont">${plant.category}</span>
-                  <a href="#">
-                      <div class="info_cont">
-                          <img src="./assets/info.svg" alt="">
-                      </div>
-                  </a>
-              </div>
-          </div>
+      plants.forEach((plant) => {
+  const plantItem = document.createElement('div');
+  plantItem.innerHTML = `
+    <div class="plant_items">
+      <div class="card-blur">
+        <div class="items_content">
+            <div class="items_content_img">
+                <img src=${plant.image} alt=${plant.title}>
+            </div>
+            <div class="items_content_text">
+                <h3>${plant.title}</h3>
+                <p>${plant.description}</p>
+            </div>
+            <div class="items_content_inner">
+                <span class="span_cont">${plant.category}</span>
+                <a href="#">
+                    <div class="info_cont">
+                        <img src="./assets/info.svg" alt="">
+                    </div>
+                </a>
+            </div>
         </div>
       </div>
-      `
+    </div>
+  `;
+  
+  // Torna clicável para redirecionar
+  plantItem.querySelector('.card-blur').addEventListener('click', () => {
+    showRedirectModal(plant.title);
+  });
+
+  document.querySelector('.plants').appendChild(plantItem);
+});
       plantList.appendChild(plantItem)
     })
   }
