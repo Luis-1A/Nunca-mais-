@@ -4,19 +4,19 @@
     title: 'Jardinagem',
     description: 'Serviços completos de jardinagem para manter seu espaço verde saudável e bonito.',
     category: 'Jardinagem',
-    image: './assets/img1.png'
+    image: './assets/jardinagem.png'
   },
   {
     title: 'Irrigação',
     description: 'Instalação e manutenção de sistemas de irrigação para eficiência no uso da água.',
     category: 'Irrigação',
-    image: './assets/img1.png'
+    image: './assets/irrigação.png'
   },
   {
     title: 'Manutenção de Jardins',
     description: 'Podas, limpeza, adubação e cuidados regulares para jardins sempre bem cuidados.',
     category: 'Manutenção',
-    image: './assets/img1.png'
+    image: './assets/manutenção.png'
   },
   {
     title: 'Serviços Elétricos',
@@ -28,7 +28,7 @@
     title: 'Automatização',
     description: 'Automação de sistemas como irrigação, iluminação e sensores para jardins.',
     category: 'Automatização',
-    image: './assets/img1.png'
+    image: './assets/automação.png'
   },
   {
     title: 'Serviços para Condomínios',
@@ -46,7 +46,7 @@
     title: 'Limpeza de Piscinas',
     description: 'Limpeza, tratamento da água e manutenção preventiva de piscinas.',
     category: 'Piscinas',
-    image: './assets/img1.png'
+    image: './assets/piscina.png'
   },
   {
     title: 'Combate a Pragas',
