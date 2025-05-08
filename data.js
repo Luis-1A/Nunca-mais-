@@ -37,12 +37,6 @@
     image: './assets/pedio.jpg'
   },
   {
-    title: 'Serviços Prediais',
-    description: 'Manutenção de áreas comuns com foco em paisagismo e conservação externa.',
-    category: 'Predial',
-    image: './assets/planta.jpg'
-  },
-  {
     title: 'Limpeza de Piscinas',
     description: 'Limpeza, tratamento da água e manutenção preventiva de piscinas.',
     category: 'Piscinas',
