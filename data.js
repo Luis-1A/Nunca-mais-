@@ -1,48 +1,72 @@
 
   const plants = [
-    {
-      title: 'Jardinagem Residencial',
-      description: 'Cuidamos do seu jardim com técnicas profissionais para manter o verde sempre bonito.',
-      category: 'Jardinagem',
-      image: './assets/img1.png'
-    },
-    {
-      title: 'Instalação de Irrigação Automática',
-      description: 'Sistema moderno para manter seu jardim hidratado sem desperdício de água.',
-      category: 'Irrigação',
-      image: './assets/img1.png'
-    },
-    {
-      title: 'Manutenção de Jardins',
-      description: 'Podas, adubação, controle de pragas e tudo que seu jardim precisa regularmente.',
-      category: 'Manutenção',
-      image: './assets/img1.png'
-    },
-    {
-      title: 'Iluminação de Jardins',
-      description: 'Projetos de iluminação paisagística para valorizar seu espaço externo à noite.',
-      category: 'Elétrica',
-      image: './assets/img1.png'
-    },
-    {
-      title: 'Automatização de Sistemas',
-      description: 'Tecnologia para programar irrigação, iluminação e sensores no seu jardim.',
-      category: 'Automatização',
-      image: './assets/img1.png'
-    },
-    {
-      title: 'Paisagismo Personalizado',
-      description: 'Desenvolvemos projetos de paisagismo sob medida para cada cliente.',
-      category: 'Jardinagem',
-      image: './assets/img1.png'
-    },
-    {
-      title: 'Serviços Elétricos Externos',
-      description: 'Instalação e manutenção de pontos de energia e tomadas para jardins.',
-      category: 'Elétrica',
-      image: './assets/img1.png'
-    }
-  ];
+  {
+    title: 'Jardinagem',
+    description: 'Serviços completos de jardinagem para manter seu espaço verde saudável e bonito.',
+    category: 'Jardinagem',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Irrigação',
+    description: 'Instalação e manutenção de sistemas de irrigação para eficiência no uso da água.',
+    category: 'Irrigação',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Manutenção de Jardins',
+    description: 'Podas, limpeza, adubação e cuidados regulares para jardins sempre bem cuidados.',
+    category: 'Manutenção',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Serviços Elétricos',
+    description: 'Instalações e reparos elétricos voltados para áreas externas e jardins.',
+    category: 'Elétrica',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Automatização',
+    description: 'Automação de sistemas como irrigação, iluminação e sensores para jardins.',
+    category: 'Automatização',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Serviços para Condomínios',
+    description: 'Atendimento especializado para áreas verdes de condomínios e residenciais.',
+    category: 'Condomínio',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Serviços Prediais',
+    description: 'Manutenção de áreas comuns com foco em paisagismo e conservação externa.',
+    category: 'Predial',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Limpeza de Piscinas',
+    description: 'Limpeza, tratamento da água e manutenção preventiva de piscinas.',
+    category: 'Piscinas',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Combate a Pragas',
+    description: 'Soluções ecológicas para controle e prevenção de pragas em áreas verdes.',
+    category: 'Pragas',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Adubação',
+    description: 'Nutrição do solo com adubos adequados para estimular o crescimento saudável.',
+    category: 'Adubação',
+    image: './assets/img1.png'
+  },
+  {
+    title: 'Nivelação de Terrenos',
+    description: 'Correção e nivelamento de terrenos para paisagismo ou preparação de obra.',
+    category: 'Nivelação',
+    image: './assets/img1.png'
+  }
+];
 
   const container = document.querySelector('.plants');
 
