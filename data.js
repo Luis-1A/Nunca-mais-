@@ -40,7 +40,7 @@
     title: 'Serviços Prediais',
     description: 'Manutenção de áreas comuns com foco em paisagismo e conservação externa.',
     category: 'Predial',
-    image: './assets/img1.jpg'
+    image: './assets/planta.jpg'
   },
   {
     title: 'Limpeza de Piscinas',
