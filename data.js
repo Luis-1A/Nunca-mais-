@@ -34,7 +34,7 @@
     title: 'Serviços para Condomínios',
     description: 'Atendimento especializado para áreas verdes de condomínios e residenciais.',
     category: 'Condomínio',
-    image: './assets/img1.jpg'
+    image: './assets/condomínio.jpg'
   },
   {
     title: 'Serviços Prediais',
@@ -52,7 +52,7 @@
     title: 'Combate a Pragas',
     description: 'Soluções ecológicas para controle e prevenção de pragas em áreas verdes.',
     category: 'Pragas',
-    image: './assets/img1.jpg'
+    image: './assets/pragas.jpg'
   },
   {
     title: 'Adubação',
