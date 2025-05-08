@@ -117,6 +117,7 @@ function openMenu() {
     menuIcon.classList.remove('active')
   }
 }
+
 const servicos = [
   { imagem: "./assets/1.jpg", descricao: "" },
   { imagem: "./assets/2.jpg", descricao: "" },
@@ -139,7 +140,17 @@ const servicos = [
   { imagem: "./assets/19.jpg", descricao: "" },
   { imagem: "./assets/20.jpg", descricao: "" },
   { imagem: "./assets/21.jpg", descricao: "" },
-  { imagem: "./assets/8.jpg", descricao: "" }
+  { imagem: "./assets/22.jpg", descricao: "" },
+  { imagem: "./assets/23.jpg", descricao: "" },
+  { imagem: "./assets/24.jpg", descricao: "" },
+  { imagem: "./assets/25.jpg", descricao: "" },
+  { imagem: "./assets/26.jpg", descricao: "" },
+  { imagem: "./assets/27.jpg", descricao: "" },
+  { imagem: "./assets/28.jpg", descricao: "" },
+  { imagem: "./assets/29.jpg", descricao: "" },
+  { imagem: "./assets/30.jpg", descricao: "" },
+  { imagem: "./assets/31.jpg", descricao: "" },
+  { imagem: "./assets/32.jpg", descricao: "" }
 ];
 
 let indexAtual = 0;
