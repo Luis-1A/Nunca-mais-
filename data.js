@@ -4,67 +4,67 @@
     title: 'Jardinagem',
     description: 'Serviços completos de jardinagem para manter seu espaço verde saudável e bonito.',
     category: 'Jardinagem',
-    image: './assets/jardinagem.png'
+    image: './assets/jardinagem.jpg'
   },
   {
     title: 'Irrigação',
     description: 'Instalação e manutenção de sistemas de irrigação para eficiência no uso da água.',
     category: 'Irrigação',
-    image: './assets/irrigação.png'
+    image: './assets/irrigação.jpg'
   },
   {
     title: 'Manutenção de Jardins',
     description: 'Podas, limpeza, adubação e cuidados regulares para jardins sempre bem cuidados.',
     category: 'Manutenção',
-    image: './assets/manutenção.png'
+    image: './assets/manutenção.jpg'
   },
   {
     title: 'Serviços Elétricos',
     description: 'Instalações e reparos elétricos voltados para áreas externas e jardins.',
     category: 'Elétrica',
-    image: './assets/img1.png'
+    image: './assets/img1.jpg'
   },
   {
     title: 'Automatização',
     description: 'Automação de sistemas como irrigação, iluminação e sensores para jardins.',
     category: 'Automatização',
-    image: './assets/automação.png'
+    image: './assets/automação.jpg'
   },
   {
     title: 'Serviços para Condomínios',
     description: 'Atendimento especializado para áreas verdes de condomínios e residenciais.',
     category: 'Condomínio',
-    image: './assets/img1.png'
+    image: './assets/img1.jpg'
   },
   {
     title: 'Serviços Prediais',
     description: 'Manutenção de áreas comuns com foco em paisagismo e conservação externa.',
     category: 'Predial',
-    image: './assets/img1.png'
+    image: './assets/img1.jpg'
   },
   {
     title: 'Limpeza de Piscinas',
     description: 'Limpeza, tratamento da água e manutenção preventiva de piscinas.',
     category: 'Piscinas',
-    image: './assets/piscina.png'
+    image: './assets/piscina.jpg'
   },
   {
     title: 'Combate a Pragas',
     description: 'Soluções ecológicas para controle e prevenção de pragas em áreas verdes.',
     category: 'Pragas',
-    image: './assets/img1.png'
+    image: './assets/img1.jpg'
   },
   {
     title: 'Adubação',
     description: 'Nutrição do solo com adubos adequados para estimular o crescimento saudável.',
     category: 'Adubação',
-    image: './assets/img1.png'
+    image: './assets/img1.jpg'
   },
   {
     title: 'Nivelação de Terrenos',
     description: 'Correção e nivelamento de terrenos para paisagismo ou preparação de obra.',
     category: 'Nivelação',
-    image: './assets/img1.png'
+    image: './assets/img1.jpg'
   }
 ];
 
