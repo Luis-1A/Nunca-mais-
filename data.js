@@ -64,7 +64,7 @@
     title: 'Nivelação de Terrenos',
     description: 'Correção e nivelamento de terrenos para paisagismo ou preparação de obra.',
     category: 'Nivelação',
-    image: './assets/img1.jpg'
+    image: './assets/planagem.jpg'
   }
 ];
 
