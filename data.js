@@ -34,7 +34,7 @@
     title: 'Serviços para Condomínios',
     description: 'Atendimento especializado para áreas verdes de condomínios e residenciais.',
     category: 'Condomínio',
-    image: './assets/condomínio.jpg'
+    image: './assets/pedio.jpg'
   },
   {
     title: 'Serviços Prediais',
