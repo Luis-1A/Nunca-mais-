@@ -22,7 +22,7 @@
     title: 'Serviços Elétricos',
     description: 'Instalações e reparos elétricos voltados para áreas externas e jardins.',
     category: 'Elétrica',
-    image: './assets/img1.jpg'
+    image: './assets/elétrica.jpg'
   },
 {
   title: 'Quadro Automático para Irrigação e Bombas',
