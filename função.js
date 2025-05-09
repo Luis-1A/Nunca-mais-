@@ -51,7 +51,7 @@ document.head.appendChild(style);
 
 // Ação do botão
 skipButton.addEventListener('click', () => {
-  window.location.href = 'servicos.html';
+  window.location.href = 'serviços.html';
 });
 
 // Atualiza contador regressivo
@@ -120,7 +120,7 @@ const startRainAnimation = () => {
     body.classList.remove('active');
     loadingMessage.remove();
     skipButton.remove();
-    window.location.href = 'servicos.html';
+    window.location.href = 'serviços.html';
   }, waitTime * 1000);
 };
 
