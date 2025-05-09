@@ -1,0 +1,504 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* sets 1rem === 10px */
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #c7ecee;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+}
+
+.graphic {
+  height: 50rem;
+  width: 50rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+/***** CLOUD *****/
+.cloud {
+  height: 25rem;
+  width: 25rem;
+  position: absolute;
+  top: 20%;
+  left: -25rem;
+}
+
+.cloud__circle {
+  background-color: #f5f6fa;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.cloud__circle-1 {
+  height: 40%;
+  width: 40%;
+  top: 20%;
+  box-shadow: inset -8px -8px 10px -5px #555;
+}
+
+.cloud__circle-2 {
+  height: 55%;
+  width: 40%;
+  top: 5%;
+  left: 20%;
+  box-shadow: inset -8px -8px 10px -5px #555;
+}
+
+.cloud__circle-3 {
+  height: 40%;
+  width: 40%;
+  top: 12%;
+  left: 40%;
+  box-shadow: inset -15px -5px 8px -1px #888;
+}
+
+.cloud__circle-4 {
+  height: 40%;
+  width: 60%;
+  top: 25%;
+  right: 0%;
+  box-shadow: inset -15px -5px 8px -1px #555;
+}
+
+/***** RAINDROP *****/
+.rain-drop {
+  background-color: #f5f6fa;
+  height: 3px;
+  width: 1px;
+  animation: 0.5s linear rainfall;
+  transform-box: content-box;
+  
+  position: absolute;
+  top: 50%;
+}
+
+/***** PLANT *****/
+.branch {
+  position: absolute;
+  transform-origin: bottom;
+  z-index: 1;
+}
+
+.branch-1 {
+  height: 15rem;
+  width: 5rem;
+  bottom: 20%;
+  left: 47%;
+  border-left: 3px solid brown;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  transform: rotate(25deg) scale(0);
+}
+
+.branch-2 {
+  height: 25rem;
+  width: 5rem;
+  bottom: 20%;
+  left: 44.75%;
+  border-right: 3px solid brown;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  transform: rotate(-25deg) scale(0);
+}
+
+.branch-3 {
+  height: 35rem;
+  width: 10rem;
+  bottom: 20%;
+  left: 43.25%;
+  border-left: 3px solid brown;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  transform: rotate(12deg) scale(0);
+}
+
+.leaf {
+  position: absolute;
+  transform-origin: bottom;
+  z-index: 1000;
+}
+
+.leaf-1 {
+  height: 100%;
+  width: 200%;
+  top: -98%;
+  left: -64%;
+  transform: rotate(25deg);
+}
+
+.leaf-2 {
+  height: 60%;
+  width: 210%;
+  top: -59.5%;
+  left: -45%;
+  transform: rotate(-25deg);
+}
+
+.leaf-3 {
+  height: 57%;
+  width: 150%;
+  top: -56%;
+  left: -30%;
+  transform: rotate(45deg) scaleX(-1);
+}
+
+.blade {
+  position: absolute;
+  bottom: 0;
+  opacity: .66;
+  background-color: #A3CB38;
+  border-radius: 50%;
+  transform-origin: bottom left;
+}
+
+.blade-1 {
+  height: 80%;
+  width: 20%;
+  transform: rotate(-20deg);
+  top: 25%;
+  left: 40%;
+}
+
+.blade-2 {
+  height: 100%;
+  width: 20%;
+  top: 2.5%;
+  left: 40%;
+}
+
+.blade-3 {
+  height: 50%;
+  width: 15%;
+  transform: rotate(65deg);
+  top: 46%;
+  left: 45%;
+}
+
+.blade-4 {
+  height: 80%;
+  width: 20%;
+  transform: rotate(-20deg);
+  top: 22.5%;
+  left: 42.5%;
+}
+
+.blade-5 {
+  height: 100%;
+  width: 20%;
+  top: 0%;
+  left: 42.5%;
+}
+
+.blade-6 {
+  height: 50%;
+  width: 15%;
+  transform: rotate(65deg);
+  top: 44%;
+  left: 43%;
+}
+
+.blade-7 {
+  height: 80%;
+  width: 20%;
+  transform: rotate(-20deg);
+  top: 25%; 
+  left: 45%; 
+}
+
+.blade-8 {
+  height: 100%;
+  width: 20%;
+  top: 0%; 
+  left: 45%; 
+}
+
+.blade-9 {
+  height: 50%;
+  width: 15%;
+  transform: rotate(65deg);
+  top: 45%; 
+  left: 47%; 
+}
+
+/***** POT *****/
+.pot {
+  height: 12rem;
+  width: 15rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 2;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pot__top {
+  width: 100%;
+  border-top: 3rem solid #ff793f;
+  border-right: .5rem solid transparent;
+  border-left: .5rem solid transparent;
+  border-radius: 3px;
+}
+
+.pot__bottom {
+  width: 75%;
+  border-top: 9rem solid #cd6133;
+  border-right: 2rem solid transparent;
+  border-left: 2rem solid transparent;
+}
+
+/***** MODAL *****/
+.modal {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(5, 5, 5, 0.9);
+  z-index: 10;
+  display: none;
+}
+
+.warning {
+  color: white;
+  display: none;
+}
+
+/***** ANIMATIONS *****/
+
+body.active,
+body.active .graphic {
+  cursor: none;
+}
+
+body.active {
+  animation: 3s bgColorChange;
+}
+
+@keyframes bgColorChange {
+  0% {
+    background-color: #c7ecee;
+  }
+  10% {
+    background-color: #34495e;
+  }
+  90% {
+    background-color: #34495e;
+  } 
+  100% {
+    background-color: #c7ecee;
+  }
+}
+
+body.active .cloud {
+  animation: 3s cloudMove;
+}
+
+@keyframes cloudMove {
+  10% {
+    left: -25rem;
+    transform: translateX(0);
+  }
+  17% {
+    left: 50%;
+    transform: translateX(-35%);
+  }
+  20% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  75% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  80% {
+    left: 50%;
+    transform: translateX(-65%);
+  }
+  87% {
+    left: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rainfall {
+  from {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  to {
+    transform: translateY(33vh);
+    opacity: 1;
+  }
+}
+
+body.active .branch-1 {
+  animation: 1s 3s growBranch-1 forwards;
+}
+
+body.active .branch-2 {
+  animation: 1s 3.5s growBranch-2 forwards;
+}
+
+body.active .branch-3 {
+  animation: 1s 4s growBranch-3 forwards;
+}
+
+@keyframes growBranch-1 {
+  from {
+    transform: rotate(25deg) scale(0);
+  }
+  to {
+    transform: rotate(25deg) scale(1);
+  }
+}
+
+@keyframes growBranch-2 {
+  from {
+    transform: rotate(-25deg) scale(0);
+  }
+  to {
+    transform: rotate(-25deg) scale(1);
+  }
+}
+
+@keyframes growBranch-3 {
+  from {
+    transform: rotate(12deg) scale(0);
+  }
+  to {
+    transform: rotate(12deg) scale(1);
+  }
+}
+
+body.active .leaf-1 {
+  animation: 3s 6s fallLeaf-1 forwards;
+}
+
+body.active .leaf-2 {
+  animation: 3s 6.5s fallLeaf-2 forwards;
+}
+
+body.active .leaf-3 {
+  animation: 3s 7s fallLeaf-3 forwards;
+}
+
+@keyframes fallLeaf-1 {
+  0% {
+    transform: rotate(25deg) translateY(0);
+  }
+  15% {
+    transform: rotate(230deg) translateY(0);
+  }
+  30% {
+    transform: rotate(120deg) translateY(0);
+  }
+  45% {
+    transform: rotate(175deg) translateY(0);
+  }
+  60% {
+    transform: rotate(160deg) translateY(0);
+  }
+  100% {
+    transform: rotate(160deg) translateY(-500%);
+  }
+}
+
+@keyframes fallLeaf-2 {
+  0% {
+    transform: rotate(-25deg) translateY(0);
+  }
+  15% {
+    transform: rotate(-230deg) translateY(0);
+  }
+  30% {
+    transform: rotate(-120deg) translateY(0);
+  }
+  45% {
+    transform: rotate(-175deg) translateY(0);
+  }
+  60% {
+    transform: rotate(-160deg) translateY(0);
+  }
+  100% {
+    transform: rotate(-160deg) translateY(-500%);
+  }
+}
+
+@keyframes fallLeaf-3 {
+  0% {
+    transform: rotate(25deg) translateY(0);
+  }
+  15% {
+    transform: rotate(240deg) translateY(0);
+  }
+  30% {
+    transform: rotate(130deg) translateY(0);
+  }
+  45% {
+    transform: rotate(185deg) translateY(0);
+  }
+  60% {
+    transform: rotate(170deg) translateY(0);
+  }
+  100% {
+    transform: rotate(170deg) translateY(-500%);
+  }
+}
+
+body.active .blade-1, 
+body.active .blade-2,
+body.active .blade-3 {
+  animation: 1s 5s leafColorChange forwards;
+}
+
+body.active .blade-4, 
+body.active .blade-5,
+body.active .blade-6 {
+  animation: 1s 5.5s leafColorChange forwards;
+}
+
+body.active .blade-7, 
+body.active .blade-8,
+body.active .blade-9 {
+  animation: 1s 6s leafColorChange forwards;
+}
+
+@keyframes leafColorChange {
+  from {
+    background-color: #A3CB38;
+  }
+  to {
+    background-color: #f7b731;
+  }
+}
