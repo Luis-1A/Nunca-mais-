@@ -24,12 +24,12 @@
     category: 'Elétrica',
     image: './assets/img1.jpg'
   },
-  {
-    title: 'Automatização',
-    description: 'Automação de sistemas como irrigação, iluminação e sensores para jardins.',
-    category: 'Automatização',
-    image: './assets/automação.jpg'
-  },
+{
+  title: 'Quadro Automático para Irrigação e Bombas',
+  description: 'Montagem de quadros automáticos com acionamento de bombas, boias e sensores para sistemas de irrigação eficientes.',
+  category: 'Automatização',
+  image: './assets/img1.png'
+},
   {
     title: 'Serviços para Condomínios é residencial',
     description: 'Atendimento especializado para áreas verdes de condomínios e residenciais.',
@@ -52,7 +52,7 @@
     title: 'Adubação',
     description: 'Nutrição do solo com adubos adequados para estimular o crescimento saudável.',
     category: 'Adubação',
-    image: './assets/img1.jpg'
+    image: './assets/adubação.jpg'
   },
   {
     title: 'Nivelação de Terrenos',
