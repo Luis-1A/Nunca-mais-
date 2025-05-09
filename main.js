@@ -22,7 +22,7 @@ header = header.innerHTML = `<div class="menu-area">
                 <a href="index.html">
                     <li>Início</li>
                 </a>
-                <a href="menu.html">
+                <a href="about.html">
                     <li>Serviços</li>
                 </a>
                 <a href="sobre.html" target="_blank">
