@@ -2,8 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site em Atualização</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Manutenção | Em Breve</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,97 +12,95 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-            background: #0a0a0a;
-        }
-
-        /* Background com gradiente animado */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
+        html, body {
+            min-height: 100vh;
+            min-height: 100dvh;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #e94560);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            z-index: -2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            position: relative;
         }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Animated gradient background */
+        .gradient-bg {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 40%);
+            animation: gradientMove 20s ease-in-out infinite;
+            z-index: 0;
         }
 
-        /* Partículas flutuantes */
+        @keyframes gradientMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(5%, 5%) rotate(5deg); }
+            66% { transform: translate(-5%, 3%) rotate(-5deg); }
+        }
+
+        /* Floating particles */
         .particles {
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
             overflow: hidden;
+            z-index: 1;
         }
 
         .particle {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
-            animation: float 20s infinite linear;
+            animation: float 15s infinite;
         }
 
         @keyframes float {
-            from {
-                transform: translateY(100vh) translateX(0);
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            to {
-                transform: translateY(-100vh) translateX(100px);
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
                 opacity: 0;
             }
         }
 
-        /* Container principal */
+        /* Main container - OCUPA QUASE TODA A TELA */
         .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            width: 95%;
+            max-width: 600px;
+            min-height: 85vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        /* Card principal */
-        .main-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 60px 50px;
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            animation: slideUp 1s ease-out;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
         }
 
-        @keyframes slideUp {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -109,523 +108,345 @@
             }
         }
 
-        /* Efeito de brilho no card */
-        .main-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 10s linear infinite;
+        /* Icon - MAIOR */
+        .icon-wrapper {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 2.5rem;
+            position: relative;
         }
 
-        @keyframes rotate {
+        .gear {
+            width: 100%;
+            height: 100%;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
-        /* Ícone de construção animado */
-        .construction-icon {
-            font-size: 80px;
-            margin-bottom: 30px;
-            display: inline-block;
-            animation: bounce 2s infinite;
-            filter: drop-shadow(0 0 20px rgba(233, 69, 96, 0.5));
-            position: relative;
-            z-index: 1;
+        .gear svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: url(#gradient);
+            stroke-width: 1.5;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Título principal */
+        /* Typography - MAIOR E RESPONSIVA */
         h1 {
-            color: #fff;
-            font-size: 3em;
-            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            color: #ffffff;
+            margin-bottom: 1.5rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 0 30px rgba(233, 69, 96, 0.5);
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
         }
 
-        /* Subtítulo com efeito de digitação */
         .subtitle {
-            color: #e94560;
-            font-size: 1.5em;
-            margin-bottom: 30px;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
             font-weight: 300;
-            position: relative;
-            z-index: 1;
-            min-height: 40px;
+            line-height: 1.6;
+            max-width: 95%;
         }
 
-        .typing-cursor {
-            display: inline-block;
-            width: 3px;
-            height: 1.2em;
-            background: #e94560;
-            margin-left: 5px;
-            animation: blink 1s infinite;
-            vertical-align: middle;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
-        /* Barra de progresso */
+        /* Progress bar - MAIOR */
         .progress-container {
             width: 100%;
-            max-width: 400px;
-            margin: 40px auto;
+            max-width: 380px;
+            margin-bottom: 3rem;
             position: relative;
-            z-index: 1;
         }
 
         .progress-bar {
             width: 100%;
             height: 8px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 4px;
             overflow: hidden;
             position: relative;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #e94560, #ff6b6b, #e94560);
-            background-size: 200% 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             width: 0%;
-            border-radius: 10px;
-            animation: fillProgress 3s ease-out forwards, shimmer 2s infinite;
-            box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+            border-radius: 4px;
+            animation: progress 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
         }
 
-        @keyframes fillProgress {
-            to { width: 75%; }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+        @keyframes progress {
+            0% { width: 0%; left: 0; }
+            50% { width: 70%; }
+            100% { width: 0%; left: 100%; }
         }
 
         .progress-text {
-            color: #fff;
-            margin-top: 15px;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        /* Informações de contato */
-        .contact-info {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-info p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-decoration: none;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .social-links a:hover {
-            background: #e94560;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
-        }
-
-        /* Contador regressivo */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 30px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .countdown-item {
-            text-align: center;
-        }
-
-        .countdown-value {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #e94560;
-            display: block;
-            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
-        }
-
-        .countdown-label {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9em;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        /* Responsividade */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
+        /* Buttons - MAIORES E LARGOS */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 380px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1.3rem 2rem;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 10px 30px -10px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Status indicator */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Desktop adjustments */
+        @media (min-width: 768px) {
+            .container {
+                padding: 3rem;
+                max-width: 750px;
+                min-height: 80vh;
+            }
+            
+            .icon-wrapper {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 3rem;
+            }
+            
+            .button-group {
+                flex-direction: row;
+                max-width: 500px;
+                gap: 1.5rem;
+            }
+            
+            .btn {
+                width: auto;
+                flex: 1;
+                padding: 1.3rem 3rem;
             }
             
             .subtitle {
-                font-size: 1.2em;
+                margin-bottom: 4rem;
             }
             
-            .main-card {
-                padding: 40px 30px;
+            .progress-container {
+                margin-bottom: 4rem;
+            }
+        }
+
+        /* Mobile landscape - telas baixas */
+        @media (max-height: 600px) {
+            .container {
+                min-height: 90vh;
+                padding: 1.5rem;
             }
             
-            .countdown {
-                gap: 15px;
+            .icon-wrapper {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1rem;
             }
             
-            .countdown-value {
-                font-size: 1.8em;
+            h1 {
+                margin-bottom: 0.5rem;
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                margin-bottom: 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .progress-container {
+                margin-bottom: 1.5rem;
             }
         }
 
-        /* Efeito de pulso no botão */
-        .notify-btn {
-            margin-top: 30px;
-            padding: 15px 40px;
-            background: linear-gradient(45deg, #e94560, #ff6b6b);
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        /* Glitch effect on hover for title */
+        h1:hover {
+            animation: glitch 0.3s ease;
         }
 
-        .notify-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4);
-        }
-
-        .notify-btn:active {
-            transform: translateY(-1px);
-        }
-
-        /* Modal de notificação */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            max-width: 400px;
-            animation: modalPop 0.3s ease;
-        }
-
-        @keyframes modalPop {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .modal-content h3 {
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .modal-content input {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 1em;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .modal-content input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .modal-content button {
-            padding: 12px 30px;
-            background: #e94560;
-            border: none;
-            border-radius: 25px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 1em;
-            transition: all 0.3s;
-        }
-
-        .modal-content button:hover {
-            background: #ff6b6b;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
-            font-size: 30px;
-            cursor: pointer;
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
         }
     </style>
 </head>
 <body>
-    <!-- Background animado -->
-    <div class="bg-animation"></div>
-    
-    <!-- Partículas -->
+    <div class="gradient-bg"></div>
+
     <div class="particles" id="particles"></div>
 
-    <!-- Container principal -->
-    <div class="container">
-        <div class="main-card">
-            <!-- Ícone de construção -->
-            <div class="construction-icon">👷‍♂️</div>
-            
-            <!-- Título -->
-            <h1>Em Construção</h1>
-            
-            <!-- Subtítulo com efeito de digitação -->
-            <div class="subtitle">
-                <span id="typing-text"></span><span class="typing-cursor"></span>
-            </div>
-
-            <!-- Contador regressivo -->
-            <div class="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-value" id="days">00</span>
-                    <span class="countdown-label">Dias</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-value" id="hours">00</span>
-                    <span class="countdown-label">Horas</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-value" id="minutes">00</span>
-                    <span class="countdown-label">Minutos</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-value" id="seconds">00</span>
-                    <span class="countdown-label">Segundos</span>
-                </div>
-            </div>
-
-            <!-- Barra de progresso -->
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                <div class="progress-text">Atualização em andamento... 75% concluído</div>
-            </div>
-
-            <!-- Botão de notificação -->
-            <button class="notify-btn" onclick="openModal()">Me Avise Quando Estiver Pronto</button>
-
-            <!-- Informações de contato -->
-            <div class="contact-info">
-                <p>Enquanto isso, nos acompanhe nas redes sociais</p>
-                <div class="social-links">
-                    <a href="#" title="Facebook">📘</a>
-                    <a href="#" title="Instagram">📷</a>
-                    <a href="#" title="Twitter">🐦</a>
-                    <a href="#" title="LinkedIn">💼</a>
-                    <a href="#" title="WhatsApp">💬</a>
-                </div>
+    <div class="container" id="mainContainer">
+        <div class="icon-wrapper">
+            <div class="gear">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="1.5">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea"/>
+                            <stop offset="100%" style="stop-color:#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m20.07-4.93l-4.24 4.24M7.17 16.83l-4.24 4.24M23 12h-6m-6 0H1m20.07 4.93l-4.24-4.24M7.17 7.17L2.93 2.93"/>
+                </svg>
             </div>
         </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h3>🚀 Seja Notificado!</h3>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
-                Deixe seu e-mail e avisaremos assim que o site estiver no ar!
-            </p>
-            <input type="email" placeholder="seu@email.com" id="emailInput">
-            <button onclick="submitEmail()">Enviar</button>
+        <h1>Em Manutenção</h1>
+
+        <p class="subtitle">
+            Estamos trabalhando para trazer uma experiência ainda melhor para você.<br>
+            Volte em breve para conferir as novidades.
+        </p>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">Atualizando sistema...</div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-primary" onclick="notifyMe()">
+                <span>Me Notificar</span>
+            </button>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            <span>Sistema operacional</span>
         </div>
     </div>
 
     <script>
-        // Criar partículas flutuantes
+        // Create floating particles
         function createParticles() {
             const container = document.getElementById('particles');
-            const particleCount = 50;
+            const particleCount = 30;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.opacity = Math.random() * 0.5 + 0.1;
-                const size = Math.random() * 20 + 5;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
                 container.appendChild(particle);
             }
         }
 
-        // Efeito de digitação
-        const texts = [
-            "Estamos trabalhando para você...",
-            "Novidades incríveis estão chegando...",
-            "Quase lá, só mais um pouquinho...",
-            "Preparando algo especial..."
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.getElementById('typing-text');
+        // Notification function
+        function notifyMe() {
+            const btn = document.querySelector('.btn-primary');
+            const originalText = btn.innerHTML;
 
-        function typeEffect() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
+            btn.innerHTML = '<span>✓ Você será notificado!</span>';
+            btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
 
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentText.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                typeSpeed = 500;
-            }
-
-            setTimeout(typeEffect, typeSpeed);
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+            }, 3000);
         }
 
-        // Contador regressivo (definir data de lançamento)
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 7); // 7 dias a partir de agora
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-        }
-
-        // Modal functions
-        function openModal() {
-            document.getElementById('modal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        function submitEmail() {
-            const email = document.getElementById('emailInput').value;
-            if (email && email.includes('@')) {
-                alert('✅ Obrigado! Você será notificado quando o site estiver pronto!');
-                closeModal();
-                document.getElementById('emailInput').value = '';
-            } else {
-                alert('❌ Por favor, insira um e-mail válido!');
-            }
-        }
-
-        // Fechar modal ao clicar fora
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-
-        // Inicializar
+        // Initialize
         createParticles();
-        typeEffect();
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
 
-        // Efeito de parallax no mouse
-        document.addEventListener('mousemove', (e) => {
-            const card = document.querySelector('.main-card');
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        });
+        // Dynamic time update
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('pt-BR', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+        }
+
+        setInterval(updateTime, 1000);
     </script>
 </body>
 </html>
